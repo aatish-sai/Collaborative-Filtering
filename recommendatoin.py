@@ -1,5 +1,7 @@
 import pandas as pd
 
+import nympy as np
+
 movies_df = pd.read_table('ml-1m/movies.dat',header=None,sep='::',names=['movie_id','movie_title','movie_genre'],engine='python')
 
 ratings_df = pd.read_table('ml-1m/ratings.dat',header=None,sep='::',names=['user_id','movie_id','rating','timestamp'],engine='python')
@@ -13,3 +15,5 @@ ratings_mtx_df = ratings_df.pivot_table(values='rating',index='user_id',columns=
 ratings_mtx_df.fillna(0,inplace=True)
 
 movie_index = ratings_mtx_df.columns
+
+corr_matrix = np.corrcoef(ratings_mtx_df.T)
