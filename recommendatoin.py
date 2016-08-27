@@ -1,6 +1,6 @@
 import pandas as pd
 
-import nympy as np
+import numpy as np
 
 movies_df = pd.read_table('ml-1m/movies.dat',header=None,sep='::',names=['movie_id','movie_title','movie_genre'],engine='python')
 
