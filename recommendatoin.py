@@ -33,8 +33,8 @@ def get_movie_recommendation(user_movies):
         movie_similarity = movie_similarity + get_movie_similarity(movie_id)
 
     similarity_df = pd.DataFrame({
-        'movie_title' : 'movie_index',
-        'sum_similarity' : 'movie_similarity'
+        'movie_title' : movie_index,
+        'sum_similarity' : movie_similarity
         })
 
     similarity_df = similarity_df[~(similarity_df.movie_title.isin(user_movies))]
@@ -49,4 +49,4 @@ sample_user_movies = ratings_df[ratings_df.user_id==sample_user].movie_title.tol
 
 recommendation = get_movie_recommendation(sample_user_movies)
 
-recommendation.movie_title.head(20)
+print recommendation.movie_title.head(20)
