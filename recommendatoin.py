@@ -45,7 +45,7 @@ def get_movie_recommendation(user_movies):
 
 sample_user = 30
 
-sample_user_movies = ratings_df[ratings_df.user_id==sample_user].movie_title.tolisy()
+sample_user_movies = ratings_df[ratings_df.user_id==sample_user].movie_title.tolist()
 
 recommendation = get_movie_recommendation(sample_user_movies)
 
